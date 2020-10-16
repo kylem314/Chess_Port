@@ -1,0 +1,274 @@
+Table of Contents - To Ctrl F to jump to
+
+### Dump1 - Excessively Spammy White Persp Print
+### Dump2 How to execute other files from main
+### Dump3 converting characters to numbers and vice versa
+### Dump4 unicode chess pieces
+### Dump5 Base board
+### Dump6 Chess piece board, reverse colors
+### Dump7 Random Imports
+### Dump8 Numpy test
+### Dump9 How to write to a file
+### Dump10 Edited piecemove function extra things
+### Dump11 How to randomize a string
+### Dump12 White vs black piece list
+### Dump13 Perfect animation
+### Dump14 Piecemove function
+
+# Dump1 - Excessively Spammy White Persp Print
+
+
+"""
+spamcounter = 1
+for x in range(9):
+  if x == 1:
+    for y in list8:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 2:
+    for y in list7:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 3:
+    for y in list6:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 4:
+    for y in list5:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 5:
+    for y in list4:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 6:
+    for y in list3:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 7:
+    for y in list2:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+  if x == 8:
+    for y in list1:
+      print(y, end = " | ")
+      spamcounter += 1
+      if spamcounter == 8:
+        print(y, "", x)
+        print("----|----|----|----|----|----|----|----")
+        print(end = " ")
+        spamcounter = 1
+"""
+
+# Dump2 How to execute other files from main
+
+def moveable():
+  exec(open("moveable.py").read())
+
+
+# Dump3 converting characters to numbers and vice versa
+
+ord("a") - 96 = 1
+chr(1+96) = "a"
+
+# Dump4 unicode chess pieces
+
+"a8":"♜ ", "b8":"♞ ", "c8":"♝ ", "d8":"♛ ", "e8":"♚ ", "f8":"♝ ", "g8":"♞ ", "h8":"♜ ",
+♜	♞	♝	♛	♚	♝	♞	♜
+♟	♟	♟	♟	♟	♟	♟	♟
+♙	♙	♙	♙	♙	♙	♙	♙
+♖	♘	♗	♕	♔	♗	♘	♖
+
+# Dump5 Base board
+
+board = {
+"a8":"BR", "b8":"BN", "c8":"BB", "d8":"BQ", "e8":"BK", "f8":"BB", "g8":"BN", "h8":"BR",
+"a7":"bp", "b7":"bp", "c7":"bp", "d7":"bp", "e7":"bp", "f7":"bp", "g7":"bp", "h7":"bp",
+"a6":"  ", "b6":"  ", "c6":"  ", "d6":"  ", "e6":"  ", "f6":"  ", "g6":"  ", "h6":"  ",
+"a5":"  ", "b5":"  ", "c5":"  ", "d5":"  ", "e5":"  ", "f5":"  ", "g5":"  ", "h5":"  ",
+"a4":"  ", "b4":"  ", "c4":"  ", "d4":"  ", "e4":"  ", "f4":"  ", "g4":"  ", "h4":"  ",
+"a3":"  ", "b3":"  ", "c3":"  ", "d3":"  ", "e3":"  ", "f3":"  ", "g3":"  ", "h3":"  ",
+"a2":"wp", "b2":"wp", "c2":"wp", "d2":"wp", "e2":"wp", "f2":"wp", "g2":"wp", "h2":"wp",
+"a1":"WR", "b1":"WN", "c1":"WB", "d1":"WQ", "e1":"WK", "f1":"WB", "g1":"WN", "h1":"WR"}
+
+# Dump6 Chess piece board, reverse colors
+
+board = {
+"a8":"♜ ", "b8":"♞ ", "c8":"♝ ", "d8":"♛ ", "e8":"♚ ", "f8":"♝ ", "g8":"♞ ", "h8":"♜ ",
+"a7":"♟ ", "b7":"♟ ", "c7":"♟ ", "d7":"♟ ", "e7":"♟ ", "f7":"♟ ", "g7":"♟ ", "h7":"♟ ",
+"a6":"  ", "b6":"  ", "c6":"  ", "d6":"  ", "e6":"  ", "f6":"  ", "g6":"  ", "h6":"  ",
+"a5":"  ", "b5":"  ", "c5":"  ", "d5":"  ", "e5":"  ", "f5":"  ", "g5":"  ", "h5":"  ",
+"a4":"  ", "b4":"  ", "c4":"  ", "d4":"  ", "e4":"  ", "f4":"  ", "g4":"  ", "h4":"  ",
+"a3":"  ", "b3":"  ", "c3":"  ", "d3":"  ", "e3":"  ", "f3":"  ", "g3":"  ", "h3":"  ",
+"a2":"♙ ", "b2":"♙ ", "c2":"♙ ", "d2":"♙ ", "e2":"♙ ", "f2":"♙ ", "g2":"♙ ", "h2":"♙ ",
+"a1":"♖ ", "b1":"♘ ", "c1":"♗ ", "d1":"♕ ", "e1":"♔ ", "f1":"♗ ", "g1":"♘ ", "h1":"♖ "}
+
+board = {
+"a8":"♖ ", "b8":"♘ ", "c8":"♗ ", "d8":"♕ ", "e8":"♔ ", "f8":"♗ ", "g8":"♘ ", "h8":"♖ ",
+"a7":"♙ ", "b7":"♙ ", "c7":"♙ ", "d7":"♙ ", "e7":"♙ ", "f7":"♙ ", "g7":"♙ ", "h7":"♙ ",
+"a6":"  ", "b6":"  ", "c6":"  ", "d6":"  ", "e6":"  ", "f6":"  ", "g6":"  ", "h6":"  ",
+"a5":"  ", "b5":"  ", "c5":"  ", "d5":"  ", "e5":"  ", "f5":"  ", "g5":"  ", "h5":"  ",
+"a4":"  ", "b4":"  ", "c4":"  ", "d4":"  ", "e4":"  ", "f4":"  ", "g4":"  ", "h4":"  ",
+"a3":"  ", "b3":"  ", "c3":"  ", "d3":"  ", "e3":"  ", "f3":"  ", "g3":"  ", "h3":"  ",
+"a2":"♟ ", "b2":"♟ ", "c2":"♟ ", "d2":"♟ ", "e2":"♟ ", "f2":"♟ ", "g2":"♟ ", "h2":"♟ ",
+"a1":"♜ ", "b1":"♞ ", "c1":"♝ ", "d1":"♛ ", "e1":"♚ ", "f1":"♝ ", "g1":"♞ ", "h1":"♜ "}
+
+# Dump7 Random imports
+
+"""
+# Imports
+import os
+import tensorflow as tf
+import cProfile
+"""
+
+# Dump8 Numpy test
+
+"""
+# Make the array `my_array`
+my_array = np.array([[1,2,3,4], [5,6,7,8]], dtype=np.int64)
+
+# Print `my_array`
+print(my_array)
+"""
+
+### Dump9 How to write to a file
+
+f = open('file.txt', 'w+')
+f.write('Hello world!')
+f.close()
+
+### Dump10 Edited piecemove function extra things
+
+  '''
+  if whitemove == True:
+    whitemovelist.append(piece[1] + usermove[3:5])
+    turnnumber += 1
+    turnappend = str(turnnumber)
+    turnnumberlist.append(turnappend + "  ")
+  else:
+    blackmovelist.append(piece[1] + usermove[3:5])
+
+
+# Printing Moves
+  print("")
+  for value in turnnumberlist:
+    print(turnnumberlist[counter1], end = " ")
+    counter1 += 1
+  print("")
+  counter1 = 0
+  for value in whitemovelist:
+    print(whitemovelist[counter1], end = " ")
+    counter1 += 1
+  print("")
+  counter1 = 0
+  for value in blackmovelist:
+    print(blackmovelist[counter1], end = " ")
+    counter1 += 1
+  print("")
+  counter1 = 0
+  '''
+
+### Dump11 How to randomize a string
+
+import uuid
+
+def my_random_string(string_length=10):
+    """Returns a random string of length string_length."""
+
+# Convert UUID format to a Python string.
+    random = str(uuid.uuid4())
+
+# Make all characters uppercase.
+    random = random.upper()
+
+# Remove the UUID '-'.
+    random = random.replace("-","")
+
+# Return the random string.
+    return random[0:string_length]
+
+print(my_random_string(6)) # For example, D9E50C
+
+### Dump12 White vs black piece list
+
+piece = ["♖ ","♘ ","♗ ","♕ ","♔ ","♙ ","♜ ","♞ ","♝ ","♛ ","♚ ","♟ "]
+
+### Dump13 Perfect animation
+
+# Read the replayfile
+replayfile = open("savereplay.txt").read()
+
+#Defining Variables
+currentletter = ""
+currentmove = ""
+
+# My beautiful test key
+# 9CC726
+
+index = replayfile.find(Key)
+if index != -1:
+  index += 6
+else:
+  print("Please enter a valid game key.")
+  main()
+
+while currentletter != "#":
+  for i in range(4):
+    currentletter = replayfile[i]
+    currentmove = currentmove + currentletter
+    print(currentmove)
+
+### Dump 14 Piecemove function
+
+# Piecemove Function
+def piecemove(piece,usermove,whitemove):
+  if board[usermove[3:5]] != "  ":
+    if whitemove == True:
+      whitemovelist.append(piece[1] + "x" + usermove[3:5] + "   ")
+    else:
+      blackmovelist.append(piece[1] + "x" + usermove[3:5] + "   ")
+    global turnrecorded
+    turnrecorded = True
+  board[usermove[0:2]] = '  '
+  board[usermove[3:5]] = piece
+
+  if replaying == False:
+    savefile = open("savereplay.txt", "a")
+    savefile.write(usermove)
+    savefile.close()
